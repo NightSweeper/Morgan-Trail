@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8komx1s04rq3"]
+
+[ext_resource type="Script" uid="uid://2afs15tvdd8g" path="res://scripts/spell_button.gd" id="1_q3ylf"]
+
+[node name="spell_button" type="Button"]
+offset_right = 120.0
+offset_bottom = 88.0
+theme_override_constants/line_spacing = 5
+text = "Cantrip 1"
+autowrap_mode = 3
+script = ExtResource("1_q3ylf")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

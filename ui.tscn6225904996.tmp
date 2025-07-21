@@ -1,0 +1,210 @@
+[gd_scene load_steps=10 format=3 uid="uid://dffp3lvdyl63c"]
+
+[ext_resource type="Script" uid="uid://bav7q87ivvgms" path="res://scripts/ui.gd" id="1_fyqef"]
+[ext_resource type="PackedScene" uid="uid://c8cv3rllm0im6" path="res://scripts/resources/classes/character_ui_slot.tscn" id="2_m6e0p"]
+[ext_resource type="PackedScene" uid="uid://dnf33663bha00" path="res://town_menu.tscn" id="2_waa4j"]
+[ext_resource type="Resource" uid="uid://cqi7vndfvlt5p" path="res://scripts/resources/character/character1.tres" id="3_n5ude"]
+[ext_resource type="StyleBox" uid="uid://sfo7ou64hfqg" path="res://assets/button/button_flat_chracter.tres" id="3_ok7cu"]
+[ext_resource type="Resource" uid="uid://by4bqg48npfkl" path="res://scripts/resources/character/character2.tres" id="4_y4yjw"]
+[ext_resource type="Resource" uid="uid://dqqrcafu0d8hl" path="res://scripts/resources/character/character3.tres" id="5_waa4j"]
+[ext_resource type="Resource" uid="uid://cdj01p03lwuuc" path="res://scripts/resources/character/character4.tres" id="6_ok7cu"]
+[ext_resource type="Script" uid="uid://dil2auak46wka" path="res://scripts/speed_control.gd" id="7_y4yjw"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fyqef")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 304.0
+color = Color(0.625597, 0.625597, 0.625597, 1)
+metadata/_edit_lock_ = true
+
+[node name="TravelMenu" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 328.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="equip" type="Button" parent="TravelMenu"]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 248.0
+offset_right = 947.0
+offset_bottom = 296.0
+theme_override_styles/normal = ExtResource("3_ok7cu")
+text = "EQUIP"
+
+[node name="Control" type="Control" parent="TravelMenu"]
+anchors_preset = 0
+offset_top = -328.0
+offset_right = 40.0
+offset_bottom = -288.0
+script = ExtResource("7_y4yjw")
+
+[node name="Steady" type="Button" parent="TravelMenu/Control"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 440.0
+offset_right = 672.0
+offset_bottom = 472.0
+theme_override_styles/normal = ExtResource("3_ok7cu")
+text = "Steady"
+
+[node name="Strenuous" type="Button" parent="TravelMenu/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 520.0
+offset_top = 400.0
+offset_right = 672.0
+offset_bottom = 432.0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("3_ok7cu")
+text = "Strenuous"
+
+[node name="Grueling" type="Button" parent="TravelMenu/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 520.0
+offset_top = 360.0
+offset_right = 672.0
+offset_bottom = 392.0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("3_ok7cu")
+text = "Grueling"
+
+[node name="Slow" type="Button" parent="TravelMenu/Control"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 480.0
+offset_right = 672.0
+offset_bottom = 512.0
+theme_override_styles/normal = ExtResource("3_ok7cu")
+text = "Slow"
+
+[node name="Stop" type="Button" parent="TravelMenu/Control"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 520.0
+offset_right = 672.0
+offset_bottom = 552.0
+theme_override_styles/normal = ExtResource("3_ok7cu")
+text = "Stop"
+
+[node name="Pause" type="Button" parent="TravelMenu/Control"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 560.0
+offset_right = 672.0
+offset_bottom = 592.0
+theme_override_styles/normal = ExtResource("3_ok7cu")
+text = "Start"
+
+[node name="ColorRect3" type="ColorRect" parent="TravelMenu"]
+layout_mode = 0
+offset_top = -24.0
+offset_right = 1152.0
+metadata/_edit_lock_ = true
+
+[node name="CharacterUISlot" parent="TravelMenu" instance=ExtResource("2_m6e0p")]
+process_priority = -1
+layout_mode = 0
+offset_left = 696.0
+offset_top = 31.0
+offset_right = 880.0
+offset_bottom = 95.0
+character = ExtResource("3_n5ude")
+
+[node name="CharacterUISlot2" parent="TravelMenu" instance=ExtResource("2_m6e0p")]
+process_priority = -1
+layout_mode = 0
+offset_left = 928.0
+offset_top = 32.0
+offset_right = 1112.0
+offset_bottom = 96.0
+character = ExtResource("4_y4yjw")
+
+[node name="CharacterUISlot3" parent="TravelMenu" instance=ExtResource("2_m6e0p")]
+process_priority = -1
+layout_mode = 0
+offset_left = 696.0
+offset_top = 152.0
+offset_right = 880.0
+offset_bottom = 216.0
+character = ExtResource("5_waa4j")
+
+[node name="CharacterUISlot4" parent="TravelMenu" instance=ExtResource("2_m6e0p")]
+process_priority = -1
+layout_mode = 0
+offset_left = 928.0
+offset_top = 152.0
+offset_right = 1112.0
+offset_bottom = 216.0
+character = ExtResource("6_ok7cu")
+
+[node name="landmarkmiles" type="Label" parent="TravelMenu"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 112.0
+offset_right = 320.0
+offset_bottom = 128.0
+text = "Next Landmark:"
+horizontal_alignment = 2
+
+[node name="milestotal" type="Label" parent="TravelMenu"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 144.0
+offset_right = 320.0
+offset_bottom = 160.0
+text = "Miles Traveled:"
+
+[node name="Speed" type="Label" parent="TravelMenu"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 80.0
+offset_right = 320.0
+offset_bottom = 96.0
+text = "Speed:"
+horizontal_alignment = 2
+
+[node name="weather" type="Label" parent="TravelMenu"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 48.0
+offset_right = 320.0
+offset_bottom = 64.0
+text = "Weather:"
+horizontal_alignment = 2
+
+[node name="time" type="Label" parent="TravelMenu"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -16.0
+offset_right = 112.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Time:"
+horizontal_alignment = 2
+
+[node name="TownMenu" parent="." instance=ExtResource("2_waa4j")]
+layout_mode = 0
+offset_top = 328.0
+offset_bottom = 648.0
+
+[connection signal="pressed" from="TravelMenu/Control/Steady" to="TravelMenu/Control" method="_on_steady_pressed"]
+[connection signal="pressed" from="TravelMenu/Control/Strenuous" to="TravelMenu/Control" method="_on_strenuous_pressed"]
+[connection signal="pressed" from="TravelMenu/Control/Grueling" to="TravelMenu/Control" method="_on_grueling_pressed"]
+[connection signal="pressed" from="TravelMenu/Control/Slow" to="TravelMenu/Control" method="_on_slow_pressed"]
+[connection signal="pressed" from="TravelMenu/Control/Stop" to="TravelMenu/Control" method="_on_stop_pressed"]
+[connection signal="pressed" from="TravelMenu/Control/Pause" to="TravelMenu/Control" method="_on_pause_pressed"]

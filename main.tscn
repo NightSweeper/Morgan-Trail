@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq48i2jlbyq8y"]
+
+[ext_resource type="Script" uid="uid://d4n38innp67ae" path="res://scripts/main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dffp3lvdyl63c" path="res://ui.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("ui")]
+script = ExtResource("1_0xm2m")
+ui = NodePath("CanvasLayer/UI")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("1_ig7tw")]
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

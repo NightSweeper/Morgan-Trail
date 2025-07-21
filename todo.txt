@@ -1,0 +1,15 @@
+BIG THINGS TO DO
+
+1. Combat inferface (Starting)
+- Current Attacking and ranged attacks work however no actions or class benefits
+- Now Spells (SO many)
+- Tooltips for spells and weapons
+2. Character Creation
+- Seperate scene need to start
+3. Trade Unique
+4. Random encounters
+- Currently four types of REs, fight, investigation, disaster, and trade
+- Somewhat works
+5. UI Remixing
+6. Character Depth
+- Dieases and Boons, Flaws (Data implemeted)

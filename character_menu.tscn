@@ -1,0 +1,433 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmv3gr87js7is"]
+
+[ext_resource type="StyleBox" uid="uid://sfo7ou64hfqg" path="res://assets/button/button_flat_chracter.tres" id="1_8miaq"]
+[ext_resource type="Script" uid="uid://ckaesiogv3a6q" path="res://scripts/character_menu.gd" id="1_pi0qd"]
+[ext_resource type="Resource" uid="uid://cqi7vndfvlt5p" path="res://scripts/resources/character/character1.tres" id="2_hemto"]
+[ext_resource type="Texture2D" uid="uid://by583trxp77u3" path="res://assets/prof_icon.png" id="2_pi0qd"]
+[ext_resource type="Resource" uid="uid://by4bqg48npfkl" path="res://scripts/resources/character/character2.tres" id="3_ifyui"]
+[ext_resource type="Resource" uid="uid://dqqrcafu0d8hl" path="res://scripts/resources/character/character3.tres" id="4_bsn8a"]
+[ext_resource type="Resource" uid="uid://cdj01p03lwuuc" path="res://scripts/resources/character/character4.tres" id="5_hr647"]
+[ext_resource type="Script" uid="uid://wfykgrb4ldau" path="res://scripts/character_panel_menu.gd" id="7_ifyui"]
+
+[node name="CharacterMenu" type="Control" node_paths=PackedStringArray("inv_list")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pi0qd")
+char1 = ExtResource("2_hemto")
+char2 = ExtResource("3_ifyui")
+char3 = ExtResource("4_bsn8a")
+char4 = ExtResource("5_hr647")
+char_show = ExtResource("2_hemto")
+inv_list = NodePath("ColorRect/InvList")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="c_Name" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 48.0
+offset_right = 456.0
+offset_bottom = 64.0
+text = "CHARACTER NAME"
+horizontal_alignment = 1
+
+[node name="lvl_class" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 72.0
+offset_right = 416.0
+offset_bottom = 88.0
+text = "LVL CLASS"
+
+[node name="lvl_class2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 72.0
+offset_right = 840.0
+offset_bottom = 88.0
+text = "INVENTORY"
+horizontal_alignment = 1
+
+[node name="CharacterPanel1" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 64.0
+offset_right = 1120.0
+offset_bottom = 160.0
+theme_override_styles/normal = ExtResource("1_8miaq")
+script = ExtResource("7_ifyui")
+char = ExtResource("2_hemto")
+
+[node name="Name_panel_small" type="Label" parent="ColorRect/CharacterPanel1"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 24.0
+text = "CHARACTER NAME"
+
+[node name="lvl" type="Label" parent="ColorRect/CharacterPanel1"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 232.0
+offset_bottom = 48.0
+text = "LVL"
+
+[node name="class_panel_small" type="Label" parent="ColorRect/CharacterPanel1"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 232.0
+offset_bottom = 72.0
+text = "CLASS"
+
+[node name="CharacterPanel2" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 176.0
+offset_right = 1120.0
+offset_bottom = 272.0
+theme_override_styles/normal = ExtResource("1_8miaq")
+script = ExtResource("7_ifyui")
+char = ExtResource("3_ifyui")
+
+[node name="Name_panel_small" type="Label" parent="ColorRect/CharacterPanel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 24.0
+text = "CHARACTER NAME"
+
+[node name="lvl" type="Label" parent="ColorRect/CharacterPanel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 232.0
+offset_bottom = 48.0
+text = "LVL"
+
+[node name="class_panel_small" type="Label" parent="ColorRect/CharacterPanel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 232.0
+offset_bottom = 72.0
+text = "CLASS"
+
+[node name="CharacterPanel3" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 288.0
+offset_right = 1120.0
+offset_bottom = 384.0
+theme_override_styles/normal = ExtResource("1_8miaq")
+script = ExtResource("7_ifyui")
+char = ExtResource("4_bsn8a")
+
+[node name="Name_panel_small" type="Label" parent="ColorRect/CharacterPanel3"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 24.0
+text = "CHARACTER NAME"
+
+[node name="lvl" type="Label" parent="ColorRect/CharacterPanel3"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 232.0
+offset_bottom = 48.0
+text = "LVL"
+
+[node name="class_panel_small" type="Label" parent="ColorRect/CharacterPanel3"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 232.0
+offset_bottom = 72.0
+text = "CLASS"
+
+[node name="CharacterPanel4" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 400.0
+offset_right = 1120.0
+offset_bottom = 496.0
+theme_override_styles/normal = ExtResource("1_8miaq")
+script = ExtResource("7_ifyui")
+char = ExtResource("5_hr647")
+
+[node name="Name_panel_small" type="Label" parent="ColorRect/CharacterPanel4"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 24.0
+text = "CHARACTER NAME"
+
+[node name="lvl" type="Label" parent="ColorRect/CharacterPanel4"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 232.0
+offset_bottom = 48.0
+text = "LVL"
+
+[node name="class_panel_small" type="Label" parent="ColorRect/CharacterPanel4"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 232.0
+offset_bottom = 72.0
+text = "CLASS"
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 96.0
+offset_right = 272.0
+offset_bottom = 552.0
+
+[node name="AC" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 168.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "AC:"
+
+[node name="STR" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 152.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "STR:"
+
+[node name="prof_bonus_str" type="Sprite2D" parent="ColorRect/ColorRect/STR"]
+position = Vector2(152, 8)
+texture = ExtResource("2_pi0qd")
+
+[node name="DEX" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 152.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DEX:"
+
+[node name="prof_bonus_dex" type="Sprite2D" parent="ColorRect/ColorRect/DEX"]
+position = Vector2(152, 8)
+texture = ExtResource("2_pi0qd")
+
+[node name="CON" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 80.0
+offset_right = 152.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CON:"
+
+[node name="prof_bonus_con" type="Sprite2D" parent="ColorRect/ColorRect/CON"]
+position = Vector2(152, 8)
+texture = ExtResource("2_pi0qd")
+
+[node name="INT" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 104.0
+offset_right = 152.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "INT:"
+
+[node name="prof_bonus_int" type="Sprite2D" parent="ColorRect/ColorRect/INT"]
+position = Vector2(152, 8)
+texture = ExtResource("2_pi0qd")
+
+[node name="WIS" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 128.0
+offset_right = 152.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "WIS:"
+
+[node name="prof_bonus_wis" type="Sprite2D" parent="ColorRect/ColorRect/WIS"]
+position = Vector2(152, 8)
+texture = ExtResource("2_pi0qd")
+
+[node name="CHA" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 152.0
+offset_right = 152.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CHA:"
+
+[node name="prof_bonus_cha" type="Sprite2D" parent="ColorRect/ColorRect/CHA"]
+position = Vector2(152, 8)
+texture = ExtResource("2_pi0qd")
+
+[node name="PB" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 208.0
+offset_right = 168.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "PB:"
+
+[node name="IN" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 184.0
+offset_right = 168.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "IN:"
+
+[node name="Weapon" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 232.0
+offset_right = 192.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Weapon"
+
+[node name="+hit" type="Label" parent="ColorRect/ColorRect/Weapon"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+X"
+horizontal_alignment = 1
+
+[node name="damageRange" type="Label" parent="ColorRect/ColorRect/Weapon"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 72.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "X-X"
+horizontal_alignment = 1
+
+[node name="main_hand_name" type="Label" parent="ColorRect/ColorRect/Weapon"]
+layout_mode = 0
+offset_left = -48.0
+offset_top = 24.0
+offset_right = 152.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "None"
+horizontal_alignment = 1
+
+[node name="Armor" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_top = 344.0
+offset_right = 200.0
+offset_bottom = 360.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Armor"
+horizontal_alignment = 1
+
+[node name="armor_desc" type="Label" parent="ColorRect/ColorRect/Armor"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 200.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "None"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="InvList" type="ItemList" parent="ColorRect"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 96.0
+offset_right = 840.0
+offset_bottom = 552.0
+theme_override_constants/v_separation = 10
+auto_height = true
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 112.0
+offset_right = 440.0
+offset_bottom = 552.0
+
+[node name="itemName" type="Label" parent="ColorRect/ColorRect2"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="itemDescr" type="Label" parent="ColorRect/ColorRect2"]
+layout_mode = 0
+offset_top = 56.0
+offset_right = 160.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="equip" type="Button" parent="ColorRect/ColorRect2"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 240.0
+offset_right = 136.0
+offset_bottom = 280.0
+theme_override_styles/normal = ExtResource("1_8miaq")
+text = "Equip"
+
+[node name="discard" type="Button" parent="ColorRect/ColorRect2"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 296.0
+offset_right = 136.0
+offset_bottom = 336.0
+theme_override_styles/normal = ExtResource("1_8miaq")
+text = "Discard"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 952.0
+offset_top = 584.0
+offset_right = 1016.0
+offset_bottom = 616.0
+text = "EXIT"
+
+[connection signal="pressed" from="ColorRect/CharacterPanel1" to="." method="_on_character_panel_1_pressed"]
+[connection signal="pressed" from="ColorRect/CharacterPanel2" to="." method="_on_character_panel_2_pressed"]
+[connection signal="pressed" from="ColorRect/CharacterPanel3" to="." method="_on_character_panel_3_pressed"]
+[connection signal="pressed" from="ColorRect/CharacterPanel4" to="." method="_on_character_panel_4_pressed"]
+[connection signal="item_clicked" from="ColorRect/InvList" to="." method="_on_inv_list_item_clicked"]
+[connection signal="pressed" from="ColorRect/ColorRect2/equip" to="." method="_on_equip_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

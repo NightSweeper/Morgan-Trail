@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnf33663bha00"]
+
+[ext_resource type="PackedScene" uid="uid://c8cv3rllm0im6" path="res://scripts/resources/classes/character_ui_slot.tscn" id="1_62mmb"]
+[ext_resource type="Script" uid="uid://cac785pyuj1ni" path="res://scripts/town_menu.gd" id="1_doyko"]
+[ext_resource type="Resource" uid="uid://cqi7vndfvlt5p" path="res://scripts/resources/character/character1.tres" id="2_doyko"]
+[ext_resource type="Resource" uid="uid://by4bqg48npfkl" path="res://scripts/resources/character/character2.tres" id="3_l74ds"]
+[ext_resource type="Resource" uid="uid://dqqrcafu0d8hl" path="res://scripts/resources/character/character3.tres" id="4_x0bwn"]
+[ext_resource type="Resource" uid="uid://cdj01p03lwuuc" path="res://scripts/resources/character/character4.tres" id="5_xodf8"]
+[ext_resource type="StyleBox" uid="uid://sfo7ou64hfqg" path="res://assets/button/button_flat_chracter.tres" id="7_l74ds"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oke1t"]
+bg_color = Color(0.270222, 0.270222, 0.270222, 1)
+
+[node name="TownMenu" type="ColorRect"]
+offset_right = 1152.0
+offset_bottom = 680.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_doyko")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 24.0
+
+[node name="time" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 112.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Time:"
+horizontal_alignment = 2
+
+[node name="location" type="Label" parent="."]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 1152.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "LOCATION"
+horizontal_alignment = 1
+
+[node name="trade" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 232.0
+offset_right = 638.0
+offset_bottom = 296.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_oke1t")
+text = "TRADE"
+
+[node name="jobs" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 328.0
+offset_right = 638.0
+offset_bottom = 392.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_oke1t")
+text = "JOBS"
+
+[node name="leave" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 424.0
+offset_right = 638.0
+offset_bottom = 488.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_oke1t")
+text = "LEAVE"
+
+[node name="Food" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 160.0
+offset_bottom = 96.0
+text = "Food:"
+
+[node name="Gold" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 48.0
+offset_right = 160.0
+offset_bottom = 64.0
+text = "Gold:"
+
+[node name="CharacterUISlot" parent="." instance=ExtResource("1_62mmb")]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 74.0
+offset_right = 1112.0
+offset_bottom = 138.0
+character = ExtResource("2_doyko")
+
+[node name="CharacterUISlot2" parent="." instance=ExtResource("1_62mmb")]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 163.0
+offset_right = 1112.0
+offset_bottom = 227.0
+character = ExtResource("3_l74ds")
+
+[node name="CharacterUISlot3" parent="." instance=ExtResource("1_62mmb")]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 258.0
+offset_right = 1112.0
+offset_bottom = 322.0
+character = ExtResource("4_x0bwn")
+
+[node name="CharacterUISlot4" parent="." instance=ExtResource("1_62mmb")]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 355.0
+offset_right = 1112.0
+offset_bottom = 419.0
+character = ExtResource("5_xodf8")
+
+[node name="equip" type="Button" parent="."]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 440.0
+offset_right = 1072.0
+offset_bottom = 488.0
+theme_override_styles/normal = ExtResource("7_l74ds")
+text = "EQUIP"
+
+[connection signal="pressed" from="trade" to="." method="_on_trade_pressed"]
+[connection signal="pressed" from="leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="equip" to="." method="_on_equip_pressed"]

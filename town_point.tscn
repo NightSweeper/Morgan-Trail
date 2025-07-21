@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://3pkhc8ws2xfg"]
+
+[ext_resource type="Script" uid="uid://bbbv0qn60ytm5" path="res://scripts/town_point.gd" id="1_61jfo"]
+[ext_resource type="Texture2D" uid="uid://b3n5xhmggtgma" path="res://assets/towns/Genson'sPeak.png" id="2_8jiha"]
+
+[node name="town_point" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_61jfo")
+town_icon = ExtResource("2_8jiha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8jiha")
+
+[node name="Area2D" type="Area2D" parent="."]

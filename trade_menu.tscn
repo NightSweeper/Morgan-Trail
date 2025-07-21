@@ -1,0 +1,161 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcwyvl6xmkt4x"]
+
+[ext_resource type="Script" uid="uid://fnrgrtito8e7" path="res://scripts/trade_menu.gd" id="1_0txhl"]
+[ext_resource type="StyleBox" uid="uid://sfo7ou64hfqg" path="res://assets/button/button_flat_chracter.tres" id="1_bkyvf"]
+
+[node name="trade_menu" type="ColorRect" node_paths=PackedStringArray("town_inv", "shop_list")]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_0txhl")
+town_inv = NodePath("tradelist/ItemList")
+shop_list = NodePath("tradelist2/ItemList")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 24.0
+
+[node name="time" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 112.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Time:"
+horizontal_alignment = 2
+
+[node name="location" type="Label" parent="."]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 1152.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "LOCATION"
+horizontal_alignment = 1
+
+[node name="tradelist" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 72.0
+offset_right = 392.0
+offset_bottom = 560.0
+
+[node name="ItemList" type="ItemList" parent="tradelist"]
+layout_mode = 0
+offset_right = 304.0
+offset_bottom = 488.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="tradelist2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 72.0
+offset_right = 976.0
+offset_bottom = 264.0
+
+[node name="ItemList" type="ItemList" parent="tradelist2"]
+layout_mode = 0
+offset_right = 304.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+allow_search = false
+
+[node name="Button" type="Button" parent="tradelist2"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 224.0
+offset_right = 216.0
+offset_bottom = 264.0
+text = "Confirm"
+
+[node name="gold_amount" type="Label" parent="tradelist2"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 300.0
+offset_bottom = 216.0
+text = "Amount: "
+
+[node name="gold_amount2" type="Label" parent="tradelist2"]
+layout_mode = 0
+offset_top = -24.0
+offset_right = 300.0
+offset_bottom = -8.0
+text = "You have "
+
+[node name="item_view" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 72.0
+offset_right = 592.0
+offset_bottom = 560.0
+
+[node name="itemName" type="Label" parent="item_view"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="itemDescr" type="Label" parent="item_view"]
+layout_mode = 0
+offset_top = 56.0
+offset_right = 160.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="buy" type="Button" parent="item_view"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 328.0
+offset_right = 136.0
+offset_bottom = 368.0
+theme_override_styles/normal = ExtResource("1_bkyvf")
+text = "Buy"
+
+[node name="LineEdit" type="LineEdit" parent="item_view"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 280.0
+offset_right = 136.0
+offset_bottom = 312.0
+
+[node name="Label" type="Label" parent="item_view"]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = 256.0
+offset_right = 152.0
+offset_bottom = 272.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "How Many?"
+
+[node name="Label2" type="Label" parent="item_view"]
+visible = false
+layout_mode = 0
+offset_top = 384.0
+offset_right = 160.0
+offset_bottom = 400.0
+theme_override_colors/font_color = Color(0.947406, 3.77826e-06, 1.73271e-06, 1)
+text = "Not Valid!"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 556.0
+offset_right = 1104.0
+offset_bottom = 620.0
+text = "EXIT"
+
+[connection signal="item_selected" from="tradelist/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="tradelist2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="item_view/buy" to="." method="_on_buy_pressed"]
+[connection signal="text_changed" from="item_view/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
